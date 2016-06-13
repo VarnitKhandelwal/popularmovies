@@ -1,0 +1,25 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">Popular Movies</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_sort">Sort</string>
+
+    <string name="pref_title_social_recommendations">Sort Descending</string>
+    <string name="pref_description_social_recommendations">Set sorting direction, descending or ascending.
+    </string>
+
+    <string name="sort_pref_key">sort_key</string>
+
+    <string name="gridview_col">2</string>
+
+    <string name="detail_rating"><xliff:g id="rating">%2.1f</xliff:g>\u002F10</string>
+    <string name="detail_runtime"><xliff:g id="runtime">%3.0f</xliff:g>min</string>
+
+</resources>

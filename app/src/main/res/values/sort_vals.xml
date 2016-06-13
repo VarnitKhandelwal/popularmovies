@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sort_default">popularity</string>
+
+    <string-array name="sort_dir">
+        <item>desc</item>
+        <item>asc</item>
+    </string-array>
+
+    <string name="sort_title">Sort Movies By:</string>
+    <string-array name="sort_labels">
+        <item>Popularity</item>
+        <item>Rating</item>
+        <item>Favorites</item>
+    </string-array>
+    <string-array name="sort_vals">
+        <item>popularity</item>
+        <item>vote_average</item>
+        <item>favorites</item>
+    </string-array>
+</resources>

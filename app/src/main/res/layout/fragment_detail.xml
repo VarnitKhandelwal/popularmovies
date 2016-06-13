@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.udacityproject.varnit.popularmovies.DetailFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/detail_movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:textSize="32sp"
+                android:background="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:padding="15dp"
+                android:gravity="center_vertical"
+                android:elevation="1dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp"
+                android:orientation="vertical">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center">
+
+                        <ImageView android:id="@+id/detail_movie_poster"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="40dp"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/detail_movie_year"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/colorFontLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView android:id="@+id/detail_movie_runtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView android:id="@+id/detail_movie_rating"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/colorFontDark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <Button android:id="@+id/detail_favorite_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="10dp"
+                            android:padding="5dp"
+                            android:layout_weight="1"
+                            android:text="Add to Favorites"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/favorite_btn"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView android:id="@+id/detail_movie_overview"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View style="@style/Separator" />
+
+                <ListView android:id="@+id/detail_trailer_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarSize="0dp"/>
+
+                <View style="@style/Separator" />
+
+                <ListView android:id="@+id/detail_review_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarSize="0dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
