@@ -20,6 +20,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+
 public class DetailFragment
         extends Fragment
         implements FetchMovieDetailTask.DetailTaskCallback,
@@ -33,15 +35,15 @@ public class DetailFragment
     private Movie mMovie;
 
     // In case I have to reference these outside onCreateView, save them here.
-    private Button favoriteBtn;
-    private ImageView posterView;
-    private TextView titleView;
-    private TextView yearView;
-    private TextView overviewView;
-    private TextView ratingView;
-    private TextView runtimeView;
-    private ListView trailerList;
-    private ListView reviewList;
+    @BindView(R.id.detail_favorite_btn) private Button favoriteBtn;
+    @BindView(R.id.detail_movie_poster) private ImageView posterView;
+    @BindView(R.id.detail_movie_title) private TextView titleView;
+    @BindView(R.id.detail_movie_year) private TextView yearView;
+    @BindView(R.id.detail_movie_overview) private TextView overviewView;
+    @BindView(R.id.detail_movie_rating) private TextView ratingView;
+    @BindView(R.id.detail_movie_runtime) private TextView runtimeView;
+    @BindView(R.id.detail_trailer_list) private ListView trailerList;
+    @BindView(R.id.detail_review_list) private ListView reviewList;
     private TrailerListAdapter trailerAdpt;
     private ReviewListAdapter reviewAdpt;
     private FavoritesTask favoritesTask;
@@ -80,7 +82,7 @@ public class DetailFragment
         runtimeView = (TextView) rootView.findViewById(R.id.detail_movie_runtime);
         trailerList = (ListView) rootView.findViewById(R.id.detail_trailer_list);
         reviewList = (ListView) rootView.findViewById(R.id.detail_review_list);
-
+//        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -141,9 +143,11 @@ public class DetailFragment
     }
 
     private void updateViews() {
-        Picasso.with(getContext())
-                .load(mMovie.getPoster_url())
-                .into(posterView);
+        if(mMovie.getPoster_url() != null) {
+            Picasso.with(getContext())
+                    .load(mMovie.getPoster_url())
+                    .into(posterView);
+        }
 
         favoriteBtn.setOnClickListener(this);
         updateFavorites();
